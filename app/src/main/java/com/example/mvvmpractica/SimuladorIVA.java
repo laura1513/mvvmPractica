@@ -21,6 +21,7 @@ public class SimuladorIVA {
         int ivaMinimo = 0;
         try {
             Thread.sleep(10000);
+            //El IVA no puede ser menor del 3%
             ivaMinimo = 3;
         } catch (InterruptedException e) {}
 
@@ -30,6 +31,7 @@ public class SimuladorIVA {
             error = true;
         }
         if(!error) {
+            //Calculo total del precio con iva
             callback.cuandoEsteCalculadoElTotal(((solicitud.precio * solicitud.iva) / 100) + solicitud.precio);
         }
         callback.cuandoFinaliceElCalculo();
